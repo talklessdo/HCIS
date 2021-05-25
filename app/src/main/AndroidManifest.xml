@@ -19,7 +19,6 @@
         </activity>
         <activity android:name=".Page.Profile" />
         <activity android:name=".Page.Dashboard" />
-        <activity android:name=".Sample" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">

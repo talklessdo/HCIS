@@ -10,49 +10,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:background="@color/petik"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_weight="2"
-            android:layout_width="match_parent"
+        <Button
+            android:onClick="back"
+            android:backgroundTint="@color/petik"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/petik"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="15dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_back" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kembali"
-                android:onClick="back"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/petik"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="IZIN"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+            android:text="kembali"/>
 
     </LinearLayout>
 
