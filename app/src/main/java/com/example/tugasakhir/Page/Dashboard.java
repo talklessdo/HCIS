@@ -76,6 +76,9 @@ public class Dashboard extends AppCompatActivity {
 
 
     public void izin(View view) {
-        startActivity(new Intent(Dashboard.this,Izin.class));
+        Intent intent = new Intent(Dashboard.this,Izin.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
