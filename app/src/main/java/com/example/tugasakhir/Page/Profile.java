@@ -25,7 +25,7 @@ public class Profile extends AppCompatActivity {
         nameProf = findViewById(R.id.namaProfile);
         emailProf = findViewById(R.id.emailProfile);
 
-        nameProf.setText(userManager.getData().getName());
+        nameProf.setText(userManager.getData().getNama());
         emailProf.setText(userManager.getData().getEmail());
 
     }

@@ -17,11 +17,11 @@ public class UserManager {
     }
 
     public void saveUser(Data data){
-        String userName = data.getName();
+        String userName = data.getNama();
         String userEmail = data.getEmail();
         sharedPreferences = context.getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        editor.putString("name",userName);
+        editor.putString("nama",userName);
         editor.putString("email",userEmail);
         editor.putBoolean(LOGIN,true);
         editor.apply();
@@ -36,7 +36,7 @@ public class UserManager {
 
     public Data getData(){
         sharedPreferences = context.getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE);
-        return new Data(sharedPreferences.getString("name",null),
+        return new Data(sharedPreferences.getString("nama",null),
                 sharedPreferences.getString("email",null));
     }
 

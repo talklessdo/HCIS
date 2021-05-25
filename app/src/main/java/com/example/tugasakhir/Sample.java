@@ -21,7 +21,7 @@ public class Sample extends AppCompatActivity {
         name = findViewById(R.id.namaUser);
         email = findViewById(R.id.emailUser);
         userManager = new UserManager(this);
-        String userName = userManager.getData().getName();
+        String userName = userManager.getData().getNama();
         String userEmail = userManager.getData().getEmail();
 
         name.setText(userName);

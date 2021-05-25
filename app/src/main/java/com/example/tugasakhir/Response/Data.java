@@ -1,19 +1,19 @@
 package com.example.tugasakhir.Response;
 
 public class Data {
-    String name, email;
+    String nama, email;
 
-    public Data(String name, String email) {
-        this.name = name;
+    public Data(String nama, String email) {
+        this.nama = nama;
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getNama() {
+        return nama;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getEmail() {
