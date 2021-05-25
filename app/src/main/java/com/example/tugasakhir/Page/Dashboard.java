@@ -72,10 +72,12 @@ public class Dashboard extends AppCompatActivity {
 
     public void akun(View view) {
         startActivity(new Intent(Dashboard.this, Profile.class));
+
     }
 
 
     public void izin(View view) {
         startActivity(new Intent(Dashboard.this,Izin.class));
+
     }
 }

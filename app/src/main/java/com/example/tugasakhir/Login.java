@@ -16,6 +16,7 @@ import com.example.tugasakhir.Helper.APIService;
 import com.example.tugasakhir.Helper.Loading;
 import com.example.tugasakhir.Helper.UserManager;
 import com.example.tugasakhir.Page.Dashboard;
+import com.example.tugasakhir.Page.MainActivity;
 import com.example.tugasakhir.Response.LoginResponse;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -91,7 +92,7 @@ public class Login extends AppCompatActivity {
                                 loading.dismiss();
                                 Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                                 userManager.saveUser(loginResponse.getData());
-                                Intent intent = new Intent(Login.this, Dashboard.class);
+                                Intent intent = new Intent(Login.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
 

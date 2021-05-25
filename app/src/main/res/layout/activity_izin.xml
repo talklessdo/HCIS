@@ -13,12 +13,15 @@
         android:background="@color/petik"
         android:layout_height="wrap_content">
 
-        <Button
+        <TextView
             android:onClick="back"
-            android:backgroundTint="@color/petik"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="kembali"/>
+            android:text="Kembali"
+            android:textSize="28sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
 
