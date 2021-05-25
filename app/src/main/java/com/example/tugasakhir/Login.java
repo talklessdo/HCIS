@@ -1,6 +1,8 @@
 package com.example.tugasakhir;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Patterns;
@@ -36,6 +38,10 @@ public class Login extends AppCompatActivity {
         userManager = new UserManager(this);
 
     }
+    private boolean connect(){
+        ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return koneksi.getActiveNetworkInfo() == null;
+    }
 
     public void login(View view) {
         String userEmail = email.getText().toString();
@@ -61,6 +67,10 @@ public class Login extends AppCompatActivity {
             password.requestFocus();
             password.setError("Password minimal 3 karakter");
             return;
+        }
+
+        if (connect()){
+            Toast.makeText(this, "Tidak ada koneksi", Toast.LENGTH_SHORT).show();
         }
 
         Retrofit retrofit = new APIConfig().loadData();
@@ -102,13 +112,11 @@ public class Login extends AppCompatActivity {
 
                     }
                 }else {
-                    Toast.makeText(Login.this, "Tidak ada jaringan", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(Login.this, "Terjadi Kesalahan "+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
