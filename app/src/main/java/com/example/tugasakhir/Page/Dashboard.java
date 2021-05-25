@@ -31,7 +31,7 @@ public class Dashboard extends AppCompatActivity {
         userManager = new UserManager(this);
         UserName = findViewById(R.id.name);
 
-        UserName.setText(userManager.getData().getName());
+        UserName.setText(userManager.getData().getNama());
         currentTime = findViewById(R.id.zona);
         calendar = Calendar.getInstance();
 
