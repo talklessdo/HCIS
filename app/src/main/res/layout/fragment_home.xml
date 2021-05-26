@@ -9,8 +9,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -48,8 +49,272 @@
                 tools:layout_editor_absoluteY="73dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="370dp"
+                android:layout_marginTop="20dp"
+                android:layout_margin="10dp"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="165dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginBottom="15dp">
+
+                        <ImageView
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:src="@drawable/ic_absen" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sakit hari ini"
+                            android:textColor="@color/petik"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/12"
+                            android:textSize="26sp"
+                            android:textColor="@color/petik"
+                            android:layout_gravity="center_horizontal"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selengkapnya"
+                            android:textSize="16sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/petik"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="165dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:src="@drawable/ic_cuti" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cuti hari ini"
+                                android:textColor="@color/petik"
+                                android:textStyle="bold"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/12"
+                            android:textSize="26sp"
+                            android:textColor="@color/petik"
+                            android:layout_gravity="center_horizontal"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selengkapnya"
+                            android:textSize="16sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/petik"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="165dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:src="@drawable/ic_sakit" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hadir hari ini"
+                                android:textColor="@color/petik"
+                                android:textStyle="bold"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/12"
+                            android:textSize="26sp"
+                            android:textColor="@color/petik"
+                            android:layout_gravity="center_horizontal"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selengkapnya"
+                            android:textSize="16sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/petik"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="165dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:src="@drawable/ic_izin" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Izin hari ini"
+                                android:textColor="@color/petik"
+                                android:textStyle="bold"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/12"
+                            android:textSize="26sp"
+                            android:textColor="@color/petik"
+                            android:layout_gravity="center_horizontal"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selengkapnya"
+                            android:textSize="16sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/petik"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
 
+            </GridLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 
