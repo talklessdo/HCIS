@@ -41,12 +41,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="124dp"
-                android:text="Hai"
+                android:text="Hai, Ucup"
                 android:textSize="24sp"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteY="73dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="172dp"
+                android:layout_marginTop="8dp"
+                android:text="Div.Management"
+                android:textColor="#D7D8DD"
+                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         <RelativeLayout
