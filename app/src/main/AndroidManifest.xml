@@ -14,18 +14,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasAkhir"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Page.MainActivity"></activity>
-        <activity android:name=".Page.Izin"></activity>
+        <activity
+            android:name=".daftar_divisi"
+            android:label="@string/title_activity_daftar_divisi"
+            android:theme="@style/Theme.TugasAkhir.NoActionBar"></activity>
+        <activity
+            android:name=".daftar_kehadiran"
+            android:label="@string/title_activity_daftar_kehadiran"
+            android:theme="@style/Theme.TugasAkhir.NoActionBar" />
+        <activity
+            android:name=".daftar_cuti"
+            android:label="@string/title_activity_daftar_cuti"
+            android:theme="@style/Theme.TugasAkhir.NoActionBar" />
+        <activity
+            android:name=".daftar_pegawai"
+            android:label="@string/title_activity_daftar_pegawai"
+            android:theme="@style/Theme.TugasAkhir.NoActionBar" />
+        <activity android:name=".Page.MainActivity" />
+        <activity android:name=".Page.Izin" />
         <activity android:name=".Page.Profile" />
         <activity android:name=".Page.Dashboard" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".Page.MainActivity"
+        <activity
+            android:name=".Page.MainActivity"
             tools:ignore="DuplicateActivity" />
-
-
         <activity android:name=".MainActivity">
-        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
