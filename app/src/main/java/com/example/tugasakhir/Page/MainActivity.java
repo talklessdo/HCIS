@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import com.example.tugasakhir.Fragment.fragmentHome;
 import com.example.tugasakhir.R;
 import com.example.tugasakhir.Fragment.fragmentFitur;
-import com.example.tugasakhir.Response.fragmentSetting;
+import com.example.tugasakhir.Fragment.fragmentSetting;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {

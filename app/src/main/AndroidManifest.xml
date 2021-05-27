@@ -14,10 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasAkhir"
         android:usesCleartextTraffic="true">
+        <activity android:name=".izin_today"></activity>
+        <activity android:name=".cuti_today" />
+        <activity android:name=".hadir_today" />
+        <activity android:name=".sakit_today" />
         <activity
             android:name=".daftar_divisi"
             android:label="@string/title_activity_daftar_divisi"
-            android:theme="@style/Theme.TugasAkhir.NoActionBar"></activity>
+            android:theme="@style/Theme.TugasAkhir.NoActionBar" />
         <activity
             android:name=".daftar_kehadiran"
             android:label="@string/title_activity_daftar_kehadiran"

@@ -1,7 +1,9 @@
 package com.example.tugasakhir.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tugasakhir.R;
+import com.example.tugasakhir.cuti_today;
+import com.example.tugasakhir.hadir_today;
+import com.example.tugasakhir.izin_today;
+import com.example.tugasakhir.sakit_today;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +22,11 @@ import com.example.tugasakhir.R;
  * create an instance of this fragment.
  */
 public class fragmentHome extends Fragment {
+
+    CardView sakit;
+    CardView hadir;
+    CardView izin;
+    CardView cuti;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +72,36 @@ public class fragmentHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View v = inflater.inflate(R.layout.fragment_fitur,container,false);
+
+        hadir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), hadir_today.class));
+            }
+        });
+
+        sakit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), sakit_today.class));
+            }
+        });
+
+        cuti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), cuti_today.class));
+            }
+        });
+
+        izin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), izin_today.class));
+            }
+        });
+
+        return v;
     }
 }
