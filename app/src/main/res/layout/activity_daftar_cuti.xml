@@ -1,33 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".daftar_cuti">
+    android:orientation="vertical"
+    tools:context=".Page.Izin">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/petik"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:onClick="back"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:textSize="28sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.TugasAkhir.AppBarOverlay">
+        android:background="@color/petik"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="#00a7b8"
+        app:tabSelectedTextColor="@color/white"
+        android:id="@+id/tablayout">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.TugasAkhir.PopupOverlay" />
 
-    </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_daftar_cuti" />
+    </com.google.android.material.tabs.TabLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:id="@+id/viewpager">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>

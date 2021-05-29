@@ -10,11 +10,13 @@ import com.example.tugasakhir.Helper.UserManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.tugasakhir.R;
 import com.example.tugasakhir.cuti_today;
 import com.example.tugasakhir.hadir_today;
+import com.example.tugasakhir.isi_presensi;
 import com.example.tugasakhir.izin_today;
 import com.example.tugasakhir.sakit_today;
 
@@ -30,6 +32,7 @@ public class fragmentHome extends Fragment {
     CardView list_izin;
     CardView list_cuti;
     TextView userName;
+    Button btnHadir;
     // Required empty public constructor
     UserManager userManager;
 
@@ -84,6 +87,7 @@ public class fragmentHome extends Fragment {
         list_sakit = v.findViewById(R.id.card_sakit);
         list_izin = v.findViewById(R.id.card_izin);
         list_cuti = v.findViewById(R.id.card_cuti);
+        btnHadir = v.findViewById(R.id.rekam_kehadiran);
 
         userManager = new UserManager(getContext());
         userName = v.findViewById(R.id.name);
@@ -115,6 +119,13 @@ public class fragmentHome extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), izin_today.class));
+            }
+        });
+
+        btnHadir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), isi_presensi.class));
             }
         });
 

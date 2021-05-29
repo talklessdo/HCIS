@@ -15,8 +15,10 @@ import com.example.tugasakhir.MainActivity;
 import com.example.tugasakhir.R;
 import com.example.tugasakhir.daftar_cuti;
 import com.example.tugasakhir.daftar_divisi;
+import com.example.tugasakhir.daftar_izin;
 import com.example.tugasakhir.daftar_kehadiran;
 import com.example.tugasakhir.daftar_pegawai;
+import com.example.tugasakhir.daftar_sakit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,7 +30,8 @@ public class fragmentFitur extends Fragment {
     CardView divisi;
     CardView pegawai;
     CardView cuti;
-    CardView hadir;
+    CardView hadir, sakit, izin;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -87,6 +90,8 @@ public class fragmentFitur extends Fragment {
         cuti = v.findViewById(R.id.dftr_cuti);
         divisi = v.findViewById(R.id.dftr_divisi);
         hadir = v.findViewById(R.id.dftr_hadir);
+        sakit = v.findViewById(R.id.dftr_sakit);
+        izin = v.findViewById(R.id.dftr_izin);
 
         pegawai.setOnClickListener(new View.OnClickListener(){
 
@@ -118,6 +123,19 @@ public class fragmentFitur extends Fragment {
             }
         });
 
+        sakit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), daftar_sakit.class));
+            }
+        });
+
+        izin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), daftar_izin.class));
+            }
+        });
 
 
 

@@ -14,4 +14,13 @@
     <string name="title_activity_daftar_cuti">daftar_cuti</string>
     <string name="title_activity_daftar_kehadiran">daftar_kehadiran</string>
     <string name="title_activity_daftar_divisi">daftar_divisi</string>
+
+    <string name="judul_spin">Keterangan</string>
+    <string-array name="list_keterangan">
+        <item>Hadir</item>
+        <item>Absen</item>
+        <item>Sakit</item>
+        <item>Izin</item>
+        <item>Cuti</item>
+    </string-array>
 </resources>

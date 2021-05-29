@@ -19,7 +19,7 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="200dp"
                 android:scaleType="fitXY"
                 android:src="@mipmap/rectangle"
                 tools:ignore="MissingConstraints" />
@@ -346,6 +346,31 @@
 
             </GridLayout>
         </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/rekam_kehadiran"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:text="Rekam Kehadiran"
+                android:backgroundTint="@color/petik"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="10dp"
+                />
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:text="Rekam Kepulangan"
+                android:backgroundTint="#E35757"
+                android:layout_gravity="center_horizontal"/>
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

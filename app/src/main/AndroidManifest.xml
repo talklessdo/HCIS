@@ -14,7 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasAkhir"
         android:usesCleartextTraffic="true">
-        <activity android:name=".izin_today"></activity>
+        <activity android:name=".daftar_izin"></activity>
+        <activity android:name=".daftar_sakit" />
+        <activity android:name=".isi_presensi" />
+        <activity android:name=".izin_today" />
         <activity android:name=".cuti_today" />
         <activity android:name=".hadir_today" />
         <activity android:name=".sakit_today" />

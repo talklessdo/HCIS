@@ -8,14 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.tugasakhir.Fragment.ApproveIzin;
 import com.example.tugasakhir.Fragment.WaitingIzin;
 import com.example.tugasakhir.Fragment.fragmentHome;
 import com.example.tugasakhir.Helper.PageAdapter;
 import com.google.android.material.tabs.TabLayout;
-import com.example.tugasakhir.Fragment.ApproveIzin;
 
-
-public class daftar_cuti extends AppCompatActivity {
+public class daftar_izin extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
