@@ -1,0 +1,53 @@
+package com.example.tugasakhir;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class DetailActivity extends AppCompatActivity {
+
+    private int xid;
+    private String xnama,xemail,xpass,xttl,xalamat,xtelepon,xgender,xagama,xroles;
+    private TextView nama,email,pass,ttl,alamat,telepon,gender,agama,roles;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_detail);
+
+        Intent terima = getIntent();
+        xid = terima.getIntExtra("xId", -1);
+        xnama = terima.getStringExtra("xNama");
+        xemail = terima.getStringExtra("xEmail");
+        xpass = terima.getStringExtra("xPass");
+        xttl = terima.getStringExtra("xTgl_lahir");
+        xalamat = terima.getStringExtra("xAlamat");
+        xtelepon = terima.getStringExtra("xHp");
+        xgender = terima.getStringExtra("xGender");
+        xagama = terima.getStringExtra("xAgama");
+        xroles = terima.getStringExtra("xRoles");
+
+        nama = findViewById(R.id.namaDetail);
+        email = findViewById(R.id.emailDetail);
+        pass = findViewById(R.id.passDetail);
+        ttl = findViewById(R.id.ttlDetail);
+        alamat = findViewById(R.id.alamatDetail);
+        telepon = findViewById(R.id.TeleponDetail);
+        gender = findViewById(R.id.GenderDetail);
+        agama = findViewById(R.id.AgamaDetail);
+        roles = findViewById(R.id.rolesDetail);
+
+        nama.setText(xnama);
+        email.setText(xemail);
+        pass.setText(xpass);
+        ttl.setText(xttl);
+        alamat.setText(xalamat);
+        telepon.setText(xtelepon);
+        gender.setText(xgender);
+        agama.setText(xagama);
+        roles.setText(xroles);
+
+    }
+}

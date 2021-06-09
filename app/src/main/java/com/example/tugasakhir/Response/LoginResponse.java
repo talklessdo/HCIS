@@ -1,5 +1,9 @@
 package com.example.tugasakhir.Response;
 
+import java.util.List;
+
+import Model.DataModel;
+
 public class LoginResponse {
     Data data;
     String error;

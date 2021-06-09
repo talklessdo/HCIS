@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.example.tugasakhir.R;
 import com.example.tugasakhir.cuti_today;
 import com.example.tugasakhir.hadir_today;
-import com.example.tugasakhir.isi_presensi;
 import com.example.tugasakhir.izin_today;
 import com.example.tugasakhir.sakit_today;
 
@@ -125,7 +124,7 @@ public class fragmentHome extends Fragment {
         btnHadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), isi_presensi.class));
+                startActivity(new Intent(getActivity(), hadir_today.class));
             }
         });
 

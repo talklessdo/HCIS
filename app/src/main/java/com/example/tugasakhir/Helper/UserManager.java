@@ -19,10 +19,16 @@ public class UserManager {
     public void saveUser(Data data){
         String userName = data.getNama();
         String userEmail = data.getEmail();
+        String userRoles = data.getRoles();
+        String userPassword = data.getPassword();
+        String userId = data.getId();
         sharedPreferences = context.getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         editor.putString("nama",userName);
         editor.putString("email",userEmail);
+        editor.putString("roles",userRoles);
+        editor.putString("password", userPassword);
+        editor.putString("id", userId);
         editor.putBoolean(LOGIN,true);
         editor.apply();
 
@@ -37,7 +43,10 @@ public class UserManager {
     public Data getData(){
         sharedPreferences = context.getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE);
         return new Data(sharedPreferences.getString("nama",null),
-                sharedPreferences.getString("email",null));
+                sharedPreferences.getString("email",null),
+                sharedPreferences.getString("roles", null),
+                sharedPreferences.getString("password", null),
+                sharedPreferences.getString("id", null));
     }
 
     public void logout(){

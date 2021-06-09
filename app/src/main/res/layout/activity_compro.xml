@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComproActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_bg">
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="90dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tentang Kami"
+            android:textSize="28sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="104dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/icon_petik" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Lembaga"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pesantren Teknolog Informasi dan Komunikasi"
+        android:layout_marginLeft="20dp"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lokasi"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jl. Mandor Basar No.54 Rangkapanjaya \n Pancoran Mas Depok, 16435"
+        android:layout_marginLeft="20dp"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telepon"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(021) 77668891"
+        android:layout_marginLeft="20dp"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Website"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="https://petik.or.id/"
+        android:layout_marginLeft="20dp"
+        android:textSize="16sp"/>
+
+</LinearLayout>

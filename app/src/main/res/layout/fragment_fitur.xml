@@ -4,25 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment.fragmentFitur"
-    android:background="@color/blueybm">
+    tools:context=".Fragment.fragmentFitur">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fitur"
-        android:textColor="@color/petik"
-        android:textSize="20sp"
-        />
+
     <GridLayout
         android:layout_width="350dp"
         android:layout_height="400dp"
         android:columnCount="3"
-        android:rowCount="3"
+        android:rowCount="4"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
         >
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/dftr_pegawai"
@@ -278,7 +270,6 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-
     </GridLayout>
 
 

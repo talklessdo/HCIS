@@ -1,13 +1,24 @@
 package com.example.tugasakhir.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
 
+import com.example.tugasakhir.ComproActivity;
+import com.example.tugasakhir.Helper.PegawaiManager;
+import com.example.tugasakhir.Helper.UserManager;
+import com.example.tugasakhir.NotifikasiActivity;
+import com.example.tugasakhir.PasswordActivity;
 import com.example.tugasakhir.R;
 
 /**
@@ -16,6 +27,11 @@ import com.example.tugasakhir.R;
  * create an instance of this fragment.
  */
 public class fragmentSetting extends Fragment {
+
+    Switch myswitch;
+    TextView myRoles, myPass, myEditPass, myAbout, myAlat;
+    UserManager userManager;
+    private RecyclerView.Adapter adData;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +77,70 @@ public class fragmentSetting extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+       View v =  inflater.inflate(R.layout.fragment_setting, container, false);
+
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            getActivity().setTheme(R.style.darktheme);
+        } else {
+            getActivity().setTheme(R.style.AppTheme);
+        }
+        myswitch = v.findViewById(R.id.switchh);
+        if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            myswitch.setChecked(true);
+        }
+
+        myswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                if (isChecked)
+                {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+                }
+            }
+        });
+
+       myRoles = v.findViewById(R.id.roles);
+       myPass = v.findViewById(R.id.password);
+       myEditPass = v.findViewById(R.id.etPass);
+       myAbout = v.findViewById(R.id.tentang);
+       myAlat = v.findViewById(R.id.notifAbsen);
+
+       myAlat.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(getActivity(), NotifikasiActivity.class);
+               startActivity(intent);
+           }
+       });
+
+       userManager = new UserManager(getContext());
+
+       myRoles.setText(userManager.getData().getRoles());
+       myPass.setText(userManager.getData().getPassword());
+
+       myEditPass.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(getActivity(), PasswordActivity.class);
+               startActivity(intent);
+           }
+       });
+
+       myAbout.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(getActivity(), ComproActivity.class);
+               startActivity(intent);
+           }
+       });
+
+       return  v;
     }
 }

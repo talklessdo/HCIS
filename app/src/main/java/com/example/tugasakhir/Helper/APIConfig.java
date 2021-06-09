@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class APIConfig {
 
 
-        static String URL = "http://192.168.5.201/hcis/";
+        static String URL = "https://spirituous-story.000webhostapp.com/";
         public static Retrofit loadData(){
             Gson gson = new GsonBuilder().setLenient().create();
             OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new Interceptor() {

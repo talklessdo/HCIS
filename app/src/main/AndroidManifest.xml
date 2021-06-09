@@ -14,9 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasAkhir"
         android:usesCleartextTraffic="true">
-        <activity android:name=".daftar_izin"></activity>
-        <activity android:name=".daftar_sakit" />
-        <activity android:name=".isi_presensi" />
+        <activity android:name=".NotifikasiActivity2"></activity>
+        <activity android:name=".NotifikasiActivity" />
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".ComproActivity" />
+        <activity
+            android:name=".tambahPegawai"
+            android:parentActivityName=".daftar_pegawai" />
+        <activity android:name=".PasswordActivity" />
+        <activity android:name=".daftar_izin" />
+        <activity android:name=".daftar_sakit" /> <!-- <activity android:name=".isi_presensi" /> -->
         <activity android:name=".izin_today" />
         <activity android:name=".cuti_today" />
         <activity android:name=".hadir_today" />
@@ -57,6 +65,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <receiver android:name=".AlarmReceiver" />
+        <receiver android:name=".AlarmReceiver2" />
     </application>
 
 </manifest>

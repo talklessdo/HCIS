@@ -2,7 +2,31 @@ package Model;
 
 public class DataModel {
     private int id;
-    private String nama, alamat, roles,tgl_lahir,telepon, gender;
+    private String nama,agama, alamat,roles,tgl_lahir,telepon,gender,email,password;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAgama() {
+        return agama;
+    }
+
+    public void setAgama(String agama) {
+        this.agama = agama;
+    }
 
     public int getId() {
         return id;

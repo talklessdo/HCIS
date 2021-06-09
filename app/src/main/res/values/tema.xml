@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Light/Day Mode theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#424242</item>
+        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
+        <item name="backgroundColor">#fcfcfc</item>
+        <item name="cardBackgroundColor">#ffffff</item>
+        <item name="android:textColor">#808080</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="boxBackgroundColor">#fcfcfc</item>
+
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
+    </style>
+
+    <!-- Night / dark Mode theme -->
+    <style name="darktheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#212121</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="backgroundColor">#000000</item>
+        <item name="cardBackgroundColor">#424242</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="editTextColor">#ffffff</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="boxBackgroundColor">#303030</item>
+        <!-- <item name="backgroundColor">#303030</item> -->
+
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
+    </style>
+    </resources>
