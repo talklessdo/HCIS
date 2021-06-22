@@ -48,9 +48,10 @@ public class NotifikasiActivity2 extends AppCompatActivity implements View.OnCli
                 startTime2.set(Calendar.HOUR_OF_DAY, hour2);
                 startTime2.set(Calendar.MINUTE, minute2);
                 startTime2.set(Calendar.SECOND, 0);
-                long alarmStartTime2 = startTime2.getTimeInMillis();
+//                long alarmStartTime2 = startTime2.getTimeInMillis();
 
-                alarmManager2.set(AlarmManager.RTC_WAKEUP, alarmStartTime2, alarmIntent2);
+//                alarmManager2.set(AlarmManager.RTC_WAKEUP, alarmStartTime2, alarmIntent2);
+                alarmManager2.setRepeating(AlarmManager.RTC_WAKEUP, startTime2.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmIntent2);
 
                 Toast.makeText(this, "Notifikasi Presensi Pulang Di Aktifkan", Toast.LENGTH_SHORT).show();
 

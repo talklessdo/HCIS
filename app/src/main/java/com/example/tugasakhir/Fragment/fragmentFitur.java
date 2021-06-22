@@ -5,20 +5,17 @@ import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tugasakhir.MainActivity;
 import com.example.tugasakhir.R;
 import com.example.tugasakhir.daftar_cuti;
 import com.example.tugasakhir.daftar_divisi;
 import com.example.tugasakhir.daftar_izin;
-import com.example.tugasakhir.daftar_kehadiran;
+import com.example.tugasakhir.daftar_keterangan;
 import com.example.tugasakhir.daftar_pegawai;
-import com.example.tugasakhir.daftar_sakit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -112,7 +109,9 @@ public class fragmentFitur extends Fragment {
         hadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), daftar_kehadiran.class));
+                Intent intent = new Intent(getActivity(),daftar_keterangan.class);
+                intent.putExtra("keterangan","Hadir");
+                startActivity(intent);
             }
         });
 
@@ -123,12 +122,14 @@ public class fragmentFitur extends Fragment {
             }
         });
 
-        sakit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), daftar_sakit.class));
-            }
-        });
+//        sakit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), DaftarSakit.class);
+//                intent.putExtra("keterangan","Sakit");
+//                startActivity(intent);
+//            }
+//        });
 
         izin.setOnClickListener(new View.OnClickListener() {
             @Override

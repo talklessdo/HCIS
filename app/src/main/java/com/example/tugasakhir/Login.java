@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tugasakhir.Fragment.fragmentHome;
 import com.example.tugasakhir.Helper.APIConfig;
 import com.example.tugasakhir.Helper.APIService;
 import com.example.tugasakhir.Helper.Loading;
@@ -84,21 +85,24 @@ public class Login extends AppCompatActivity {
                     Loading loading = new Loading(Login.this);
                     loading.startLoading();
                     if (loginResponse.getError().equals("200")){
-
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                loading.dismiss();
-                                Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                                userManager.saveUser(loginResponse.getData());
-                                Intent intent = new Intent(Login.this, MainActivity.class);
-                                startActivity(intent);
-                                finish();
+                                if (loginResponse.getData().getRoles().equals("admin")){
+                                    loading.dismiss();
+                                    Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+                                    userManager.saveUser(loginResponse.getData());
+                                    Intent intent = new Intent(Login.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }else {
+                                    loading.dismiss();
+                                    Toast.makeText(Login.this, "Maaf Anda bukan Admin", Toast.LENGTH_SHORT).show();
+                                }
 
                             }
                         },3000);
-
 
 
                     }else {
@@ -126,7 +130,7 @@ public class Login extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (userManager.isLoggIn()){
-            startActivity(new Intent(Login.this, Dashboard.class));
+            startActivity(new Intent(Login.this, MainActivity.class));
             finish();
         }
     }

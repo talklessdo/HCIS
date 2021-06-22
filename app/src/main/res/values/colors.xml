@@ -10,5 +10,8 @@
     <color name="petik">#2a6078</color>
     <color name="blueybm">#C4D8E0</color>
     <color name="abu">#EDEEEF</color>
+    <color name="green">#346751</color>
+    <color name="yellow">#FFC107</color>
+    <color name="red">#F44336</color>
 
 </resources>

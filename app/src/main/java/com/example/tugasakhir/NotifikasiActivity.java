@@ -62,9 +62,12 @@ public class NotifikasiActivity extends AppCompatActivity implements View.OnClic
                 startTime.set(Calendar.HOUR_OF_DAY, hour);
                 startTime.set(Calendar.MINUTE, minute);
                 startTime.set(Calendar.SECOND, 0);
-                long alarmStartTime = startTime.getTimeInMillis();
+//                long alarmStartTime = startTime.getTimeInMillis();
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, startTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmIntent);
+//                alarmManager.set(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
+//                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime,AlarmManager.INTERVAL_DAY,alarmIntent);
 
-                alarmManager.set(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
+
 
                 Toast.makeText(this, "Notifikasi Presensi Masuk Di Aktifkan", Toast.LENGTH_SHORT).show();
                 break;

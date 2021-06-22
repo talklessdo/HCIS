@@ -1,5 +1,6 @@
 package com.example.tugasakhir.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -17,7 +18,9 @@ import android.widget.TextView;
 import com.example.tugasakhir.ComproActivity;
 import com.example.tugasakhir.Helper.PegawaiManager;
 import com.example.tugasakhir.Helper.UserManager;
+import com.example.tugasakhir.Login;
 import com.example.tugasakhir.NotifikasiActivity;
+import com.example.tugasakhir.Page.MainActivity;
 import com.example.tugasakhir.PasswordActivity;
 import com.example.tugasakhir.R;
 
@@ -29,9 +32,10 @@ import com.example.tugasakhir.R;
 public class fragmentSetting extends Fragment {
 
     Switch myswitch;
-    TextView myRoles, myPass, myEditPass, myAbout, myAlat;
+    TextView myRoles,myEditPass, myAbout, myAlat, myKeluar;
     UserManager userManager;
     private RecyclerView.Adapter adData;
+    Context context;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -107,23 +111,32 @@ public class fragmentSetting extends Fragment {
         });
 
        myRoles = v.findViewById(R.id.roles);
-       myPass = v.findViewById(R.id.password);
        myEditPass = v.findViewById(R.id.etPass);
        myAbout = v.findViewById(R.id.tentang);
        myAlat = v.findViewById(R.id.notifAbsen);
+       myKeluar = v.findViewById(R.id.keluar);
 
-       myAlat.setOnClickListener(new View.OnClickListener() {
+       myKeluar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(getActivity(), NotifikasiActivity.class);
-               startActivity(intent);
+               userManager.logout();
+               startActivity(new Intent(getActivity(), Login.class));
+               getActivity().finish();
            }
        });
+
+       myAlat.setVisibility(View.GONE);
+//       myAlat.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//           public void onClick(View v) {
+//               Intent intent = new Intent(getActivity(), NotifikasiActivity.class);
+//               startActivity(intent);
+//           }
+//       });
 
        userManager = new UserManager(getContext());
 
        myRoles.setText(userManager.getData().getRoles());
-       myPass.setText(userManager.getData().getPassword());
 
        myEditPass.setOnClickListener(new View.OnClickListener() {
            @Override

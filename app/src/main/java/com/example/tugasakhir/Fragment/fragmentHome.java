@@ -6,18 +6,28 @@ import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.example.tugasakhir.Helper.APIConfig;
+import com.example.tugasakhir.Helper.APIService;
 import com.example.tugasakhir.Helper.UserManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.tugasakhir.Page.Profile;
 import com.example.tugasakhir.R;
+import com.example.tugasakhir.Response.JumlahResponse;
 import com.example.tugasakhir.cuti_today;
 import com.example.tugasakhir.hadir_today;
 import com.example.tugasakhir.izin_today;
 import com.example.tugasakhir.sakit_today;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,12 +36,10 @@ import com.example.tugasakhir.sakit_today;
  */
 public class fragmentHome extends Fragment {
 
-    CardView list_sakit;
-    CardView list_hadir;
-    CardView list_izin;
-    CardView list_cuti;
-    TextView userName;
-    Button btnHadir;
+    private CardView list_sakit,list_hadir,list_izin,list_cuti;
+    private TextView jml_hadir, jml_user,jml_sakit,jml_userSakit,
+            jml_cuti,jml_userCuti,jml_izin,jml_userIzin,userName;
+    private String jmlHadir,jmlUser;
     // Required empty public constructor
     UserManager userManager;
 
@@ -82,11 +90,20 @@ public class fragmentHome extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home,container,false);
+        jml_hadir = v.findViewById(R.id.jmlHadir);
+        jml_cuti = v.findViewById(R.id.jmlCuti);
+        jml_izin = v.findViewById(R.id.jmlIzin);
+        jml_sakit = v.findViewById(R.id.jmlSakit);
+
+        jml_user = v.findViewById(R.id.jmlUser);
+        jml_userCuti = v.findViewById(R.id.jmlUserCuti);
+        jml_userSakit = v.findViewById(R.id.jmlUserSakit);
+        jml_userIzin = v.findViewById(R.id.jmlUserIzin);
+
         list_hadir = v.findViewById(R.id.card_hadir);
         list_sakit = v.findViewById(R.id.card_sakit);
         list_izin = v.findViewById(R.id.card_izin);
         list_cuti = v.findViewById(R.id.card_cuti);
-        btnHadir = v.findViewById(R.id.rekam_kehadiran);
 
         userManager = new UserManager(getContext());
         userName = v.findViewById(R.id.name);
@@ -121,13 +138,136 @@ public class fragmentHome extends Fragment {
             }
         });
 
-        btnHadir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), hadir_today.class));
-            }
-        });
-
+        getJmlHadir();
+        getJmlSakit();
+        getJmlCuti();
+        getJmlIzin();
+        getJmlUser();
         return v;
     }
+
+    private void getJmlIzin() {
+        Retrofit retrofit = new APIConfig().loadData();
+        APIService service = retrofit.create(APIService.class);
+        service.showIzin().enqueue(new Callback<JumlahResponse>() {
+            @Override
+            public void onResponse(Call<JumlahResponse> call, Response<JumlahResponse> response) {
+                JumlahResponse jumlahResponse = response.body();
+                if (response.isSuccessful()){
+                    if (jumlahResponse.getJumlah() != null){
+                        jmlHadir = jumlahResponse.getJumlah();
+                        jml_izin.setText(jmlHadir+"/");
+                    }
+
+                }else {
+                    Toast.makeText(getContext(), "gagal" + response.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JumlahResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getJmlCuti() {
+        Retrofit retrofit = new APIConfig().loadData();
+        APIService service = retrofit.create(APIService.class);
+        service.showCuti().enqueue(new Callback<JumlahResponse>() {
+            @Override
+            public void onResponse(Call<JumlahResponse> call, Response<JumlahResponse> response) {
+                JumlahResponse jumlahResponse = response.body();
+                if (response.isSuccessful()){
+                    if (jumlahResponse.getJumlah() != null){
+                        jmlHadir = jumlahResponse.getJumlah();
+                        jml_cuti.setText(jmlHadir+"/");
+                    }
+                }else {
+                    Toast.makeText(getContext(), "gagal" + response.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JumlahResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getJmlSakit() {
+        Retrofit retrofit = new APIConfig().loadData();
+        APIService service = retrofit.create(APIService.class);
+        service.showSakit().enqueue(new Callback<JumlahResponse>() {
+            @Override
+            public void onResponse(Call<JumlahResponse> call, Response<JumlahResponse> response) {
+                JumlahResponse jumlahResponse = response.body();
+                if (response.isSuccessful()){
+                    if (jumlahResponse.getJumlah() != null){
+                        jmlHadir = jumlahResponse.getJumlah();
+                        jml_sakit.setText(jmlHadir+"/");
+                    }
+                }else {
+                    Toast.makeText(getContext(), "gagal" + response.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JumlahResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getJmlHadir() {
+        Retrofit retrofit = new APIConfig().loadData();
+        APIService service = retrofit.create(APIService.class);
+        service.showHadir().enqueue(new Callback<JumlahResponse>() {
+            @Override
+            public void onResponse(Call<JumlahResponse> call, Response<JumlahResponse> response) {
+                JumlahResponse jumlahResponse = response.body();
+                if (response.isSuccessful()){
+                    if (jumlahResponse.getJumlah() != null){
+                        jmlHadir = jumlahResponse.getJumlah();
+                        jml_hadir.setText(jmlHadir+"/");
+                    }
+                }else {
+                    Toast.makeText(getContext(), "gagal" + response.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JumlahResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getJmlUser() {
+        Retrofit retrofit = new APIConfig().loadData();
+        APIService service = retrofit.create(APIService.class);
+        service.showUser().enqueue(new Callback<JumlahResponse>() {
+            @Override
+            public void onResponse(Call<JumlahResponse> call, Response<JumlahResponse> response) {
+                JumlahResponse jumlahResponse = response.body();
+                if (response.isSuccessful()){
+                    if (jumlahResponse.getJumlah() != null){
+                        jmlUser = jumlahResponse.getJumlah();
+                        jml_user.setText(jmlUser);
+                        jml_userCuti.setText(jmlUser);
+                        jml_userSakit.setText(jmlUser);
+                        jml_userIzin.setText(jmlUser);
+                    }
+                }else {
+                    Toast.makeText(getContext(), "gagal" + response.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JumlahResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
 }

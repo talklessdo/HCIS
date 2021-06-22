@@ -9,8 +9,8 @@ import android.widget.TextView;
 public class DetailActivity extends AppCompatActivity {
 
     private int xid;
-    private String xnama,xemail,xpass,xttl,xalamat,xtelepon,xgender,xagama,xroles;
-    private TextView nama,email,pass,ttl,alamat,telepon,gender,agama,roles;
+    private String xnama,xemail,xttl,xalamat,xtelepon,xgender,xagama,xroles;
+    private TextView nama,email,ttl,alamat,telepon,gender,agama,roles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,6 @@ public class DetailActivity extends AppCompatActivity {
         xid = terima.getIntExtra("xId", -1);
         xnama = terima.getStringExtra("xNama");
         xemail = terima.getStringExtra("xEmail");
-        xpass = terima.getStringExtra("xPass");
         xttl = terima.getStringExtra("xTgl_lahir");
         xalamat = terima.getStringExtra("xAlamat");
         xtelepon = terima.getStringExtra("xHp");
@@ -31,7 +30,6 @@ public class DetailActivity extends AppCompatActivity {
 
         nama = findViewById(R.id.namaDetail);
         email = findViewById(R.id.emailDetail);
-        pass = findViewById(R.id.passDetail);
         ttl = findViewById(R.id.ttlDetail);
         alamat = findViewById(R.id.alamatDetail);
         telepon = findViewById(R.id.TeleponDetail);
@@ -41,11 +39,14 @@ public class DetailActivity extends AppCompatActivity {
 
         nama.setText(xnama);
         email.setText(xemail);
-        pass.setText(xpass);
         ttl.setText(xttl);
         alamat.setText(xalamat);
         telepon.setText(xtelepon);
-        gender.setText(xgender);
+        if (xgender.equals("L")){
+            gender.setText("Laki-Laki");
+        }else {
+            gender.setText("Perempuan");
+        }
         agama.setText(xagama);
         roles.setText(xroles);
 

@@ -96,7 +96,7 @@ public class daftar_pegawai extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseModel> call, Throwable t) {
-                Toast.makeText(daftar_pegawai.this, "Gagal Menghubungi Server "+ t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(daftar_pegawai.this, "Gagal Terhubung ke Server "+ t.getMessage(), Toast.LENGTH_SHORT).show();
 
                 pbData.setVisibility(View.INVISIBLE);
             }

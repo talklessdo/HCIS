@@ -39,5 +39,9 @@ public class APIConfig {
                     .build();
             return retrofit;
         }
+        public static APIService getService() {
+            APIService apiService = loadData().create(APIService.class);
+            return apiService;
+        }
 
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="100dp"
+    android:layout_marginBottom="10dp"
+    android:layout_margin="5dp"
+    android:background="@color/blueybm"
+    >
+
+    <LinearLayout
+        android:id="@+id/detail_Jmlh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corners"
+        android:orientation="horizontal"
+        android:layout_marginTop="13dp"
+        android:padding="6dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_akun" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_idPegawai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Pegawai"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/tvNamaPegawai"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:text="Nama Pegawai"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_ketPegawai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keterangan"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_arrow_right" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

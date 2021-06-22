@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.tugasakhir.Fragment.CancelIzin;
 import com.example.tugasakhir.Fragment.WaitingIzin;
 import com.example.tugasakhir.Fragment.fragmentHome;
 import com.example.tugasakhir.Helper.PageAdapter;
@@ -32,7 +33,7 @@ public class izin_today extends AppCompatActivity {
         pagerAdapter = new PageAdapter(getSupportFragmentManager());
 
         ((PageAdapter) pagerAdapter).AddFragment(new WaitingIzin(),"Menunggu");
-        ((PageAdapter) pagerAdapter).AddFragment(new WaitingIzin(),"Ditolak");
+        ((PageAdapter) pagerAdapter).AddFragment(new CancelIzin(),"Ditolak");
         ((PageAdapter) pagerAdapter).AddFragment(new ApproveIzin(),"Disetujui");
 
         viewPager.setAdapter(pagerAdapter);

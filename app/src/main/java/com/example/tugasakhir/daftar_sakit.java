@@ -1,44 +1,87 @@
 package com.example.tugasakhir;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
-import com.example.tugasakhir.Fragment.ApproveIzin;
-import com.example.tugasakhir.Fragment.WaitingIzin;
 import com.example.tugasakhir.Fragment.fragmentHome;
-import com.example.tugasakhir.Helper.PageAdapter;
-import com.google.android.material.tabs.TabLayout;
+import com.example.tugasakhir.Helper.APIConfig;
+import com.example.tugasakhir.Helper.adapterDetail;
+
+import java.util.List;
+
+import Model.DataDetail;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class daftar_sakit extends AppCompatActivity {
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-    private PagerAdapter pagerAdapter;
-
+    private RecyclerView rvData;
+    private RecyclerView.LayoutManager lmData;
+    private adapterDetail adapterDetail;
+    private SwipeRefreshLayout srlData;
+    private ProgressBar pbData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_izin_today);
+        setContentView(R.layout.activity_daftar_keterangan);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        tabLayout = findViewById(R.id.tablayout);
-        viewPager = findViewById(R.id.viewpager);
-        pagerAdapter = new PageAdapter(getSupportFragmentManager());
+        rvData = findViewById(R.id.rv_dataHadirPegawai);
+        lmData = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);
+        rvData.setLayoutManager(lmData);
 
-        ((PageAdapter) pagerAdapter).AddFragment(new WaitingIzin(),"Menunggu");
-        ((PageAdapter) pagerAdapter).AddFragment(new WaitingIzin(),"Ditolak");
-        ((PageAdapter) pagerAdapter).AddFragment(new ApproveIzin(),"Disetujui");
+        srlData = findViewById(R.id.srl_data);
+        pbData = findViewById(R.id.pb_data);
+        adapterDetail = new adapterDetail();
 
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
+        load();
+        srlData.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                srlData.setRefreshing(true);
+                load();
+                srlData.setRefreshing(false);
+            }
+        });
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_time);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_cancel);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_approve);
+    }
+
+    private void load() {
+        pbData.setVisibility(View.VISIBLE);
+
+        Call<List<DataDetail>> call =  APIConfig.getService().ardUser();
+        call.enqueue(new Callback<List<DataDetail>>() {
+            @Override
+            public void onResponse(Call<List<DataDetail>> call, Response<List<DataDetail>> response) {
+                if (response.isSuccessful()) {
+                    List<DataDetail> list = response.body();
+                    adapterDetail.setListData(list);
+                    rvData.setAdapter(adapterDetail);
+
+                }
+
+
+                pbData.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onFailure(Call<List<DataDetail>> call, Throwable t) {
+                Toast.makeText(daftar_sakit.this, "Gagal, Tidak ada data", Toast.LENGTH_SHORT).show();
+                pbData.setVisibility(View.INVISIBLE);
+            }
+        });
+
     }
 
     public void back(View view) {

@@ -8,12 +8,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.tugasakhir.Fragment.fragmentHome;
+import com.example.tugasakhir.Helper.UserManager;
 import com.example.tugasakhir.R;
 import com.example.tugasakhir.Fragment.fragmentFitur;
 import com.example.tugasakhir.Fragment.fragmentSetting;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    private UserManager userManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         BottomNavigationView navigation = findViewById(R.id.nav_bar);
         navigation.setOnNavigationItemSelectedListener(this);
+        userManager = new UserManager(this);
 
     }
     private void loadFragment(Fragment fragment) {
